@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Queue(models.Model):
-    id = models.UUIDField(default=uuid, primary_key=True, editable=False)
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     section_code = models.CharField(max_length=5)
     section_name = models.TextField()
     division_code = models.CharField(max_length=5)
