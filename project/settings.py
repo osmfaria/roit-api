@@ -12,17 +12,17 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-import dj_database_url
 
-import dotenv
+import dj_database_url
 import django_on_heroku
+import dotenv
 
 dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environment = os.getenv('DJANGO_ENV', 'development')
+environment = os.getenv("DJANGO_ENV", "development")
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,12 +32,12 @@ environment = os.getenv('DJANGO_ENV', 'development')
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if environment != 'development':
+if environment != "development":
     DEBUG = False
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['roit.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["roit.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -77,7 +77,7 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
-CORS_ALLOWED_ORIGINS = ['*']
+CORS_ALLOWED_ORIGINS = ["*"]
 
 ROOT_URLCONF = "project.urls"
 
@@ -113,6 +113,20 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+
+if environment != "development":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("POSTGRES_DB"),
+            "USER": os.getenv("POSTGRES_USER"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+            "HOST": "127.0.0.1",
+            "PORT": 5432,
+        }
+    }
+else:
+    DATABASES = {"default": dj_database_url.config(conn_max_age=600, ssl_require=True)}
 
 
 # Password validation
