@@ -14,6 +14,7 @@ Este é um aplicativo de backend que recebe solicitações de robôs do UiPath. 
 
 
 ## 📋 Guia de instalação
+Para executar localmente este app, siga as intruções abaixo:
 
 - Clone este repositório;
 - Para executar localmente, certifique-se de ter o PostgreSQL instalado em seu sistema;
