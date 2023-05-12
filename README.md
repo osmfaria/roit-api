@@ -3,7 +3,7 @@
 
 Este é um aplicativo de backend que recebe solicitações de robôs do UiPath. Os robôs enviam dados relacionados ao CNAE (Classificação Nacional de Atividades Econômicas) do site do IBGE, os quais podem ser armazenados e acessados por meio da API.
 
-> O link da app deployed [API](https://roit.herokuapp.com/api/) 
+> O link da app deployed no heroku [API](https://roit.herokuapp.com/api/docs/) 
 
 > 
 ## 📚 Documentação 
@@ -16,15 +16,15 @@ Este é um aplicativo de backend que recebe solicitações de robôs do UiPath. 
 ## 📋 Guia de instalação
 
 - Clone este repositório;
-- Para executar localmente, faz-se necessário ter o postgreSQL instalado;
-- Observer o .env.exemple, crie um arquivo .env forneça as variaveis de ambiente necessárias para que o app se conecte com o database;
-- Criei um ambiente virtual com `python -m venv venv`;
-- Entre no ambiente virtual com `source venv/bin/activate`;
-- Instale as dependências com `pip install -r requirements.txt`
-- Criei as migrations com `python manage.py makemigrations`
-- Execute as migrations `python manage.py migrate` para que o banco de dados tenha o esquema criado baseado nas models.
+- Para executar localmente, certifique-se de ter o PostgreSQL instalado em seu sistema;
+- Observe o arquivo .env.example e crie um arquivo chamado .env, fornecendo as variáveis de ambiente necessárias para que o aplicativo possa se conectar ao banco de dados;
+- Crie um ambiente virtual executando o comando `python -m venv venv`;
+- Ative o ambiente virtual executando o comando `source venv/bin/activate`;
+- Instale as dependências com o comando `pip install -r requirements.txt`
+- Crie as migrações usando `python manage.py makemigrations`;
+- Execute as migrações para criar o esquema do banco de dados baseado nas models, utilizando o comando `python manage.py migrate`;
 - Finalmente, execute o comando `python manage.py runserver` a porta configurada normalmente é a 8000, verifique o applicativo rodando no `http://localhost:8000/api/doc/`
-- Envie requisições para `http://localhost:8000/api/***` conforme rotas disponiveis no [docs](https://roit.herokuapp.com/api/docs/).
+- Finalmente, inicie o servidor com o comando `python manage.py runserver`. Normalmente, o aplicativo estará disponível em `http://localhost:8000/`. Verifique a documentação da API em [docs](https://roit.herokuapp.com/api/docs/). para obter as rotas disponíveis. Envie as requisições para `http://localhost:8000/api/***` de acordo com a rota desejada. 
 
 ## 💻 Tech stack
 
