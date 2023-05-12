@@ -8,5 +8,4 @@ urlpatterns = [
     path('cnab/remove/', views.QueueDeleteView.as_view(), name="queue_delete-view"),
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     path('docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-
 ]
