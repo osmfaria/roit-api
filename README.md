@@ -3,9 +3,11 @@
 
 Este é um aplicativo de backend que recebe solicitações de robôs do UiPath. Os robôs enviam dados relacionados ao CNAE (Classificação Nacional de Atividades Econômicas) do site do IBGE, os quais podem ser armazenados e acessados por meio da API.
 
-> O link da app deployed [API](https://roit.herokuapp.com/api/) \
-> A documentação das rotas [aqui](https://roit.herokuapp.com/api/docs/) 
+> O link da app deployed [API](https://roit.herokuapp.com/api/) 
 
+> 
+## 📚 Documentação 
+- A documentação das rotas [aqui](https://roit.herokuapp.com/api/docs/) 
 ## :toolbox: Ferramentas
 
 - Considere utilizar [Postman](https://www.postman.com/downloads/) ou [Insomnia](https://insomnia.rest/download) para enviar requisições para a API. A documentação também permite interação com as rotas.
