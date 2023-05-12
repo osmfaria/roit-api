@@ -24,7 +24,6 @@ Para executar localmente este app, siga as intruções abaixo:
 - Instale as dependências com o comando `pip install -r requirements.txt`
 - Crie as migrações usando `python manage.py makemigrations`;
 - Execute as migrações para criar o esquema do banco de dados baseado nas models, utilizando o comando `python manage.py migrate`;
-- Finalmente, execute o comando `python manage.py runserver` a porta configurada normalmente é a 8000, verifique o applicativo rodando no `http://localhost:8000/api/doc/`
 - Finalmente, inicie o servidor com o comando `python manage.py runserver`. Normalmente, o aplicativo estará disponível em `http://localhost:8000/`. Verifique a documentação da API em [docs](https://roit.herokuapp.com/api/docs/). para obter as rotas disponíveis. Envie as requisições para `http://localhost:8000/api/***` de acordo com a rota desejada. 
 
 ## 💻 Tech stack
