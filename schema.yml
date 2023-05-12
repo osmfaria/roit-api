@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: Roit API
+  version: 1.0.0
+  description: API to handle Uipath robot requests, data related to CNAE IBGE website
+paths:
+  /api/cnab/:
+    get:
+      operationId: cnab_list
+      tags:
+      - cnab
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Queue'
+          description: ''
+    post:
+      operationId: cnab_create
+      tags:
+      - cnab
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Queue'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Queue'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Queue'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Queue'
+          description: ''
+  /api/cnab/remove/:
+    delete:
+      operationId: cnab_remove_destroy
+      tags:
+      - cnab
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Queue:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        section_code:
+          type: string
+          maxLength: 5
+        section_name:
+          type: string
+        division_code:
+          type: string
+          maxLength: 5
+        division_name:
+          type: string
+        group_code:
+          type: string
+          maxLength: 10
+        group_name:
+          type: string
+        class_code:
+          type: string
+          maxLength: 10
+        class_name:
+          type: string
+        subclass_code:
+          type: string
+          maxLength: 15
+        subclass_name:
+          type: string
+      required:
+      - class_code
+      - class_name
+      - division_code
+      - division_name
+      - group_code
+      - group_name
+      - id
+      - section_code
+      - section_name
+      - subclass_code
+      - subclass_name
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

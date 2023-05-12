@@ -10,6 +10,7 @@ class QueueView(generics.ListCreateAPIView):
 
 class QueueDeleteView(generics.DestroyAPIView):
     queryset = Queue.objects.all()
+    serializer_class = QueueSerializer
 
     def destroy(self, request, *args, **kwargs):
         self.queryset.delete()
