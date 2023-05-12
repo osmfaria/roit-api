@@ -1,1 +1,1 @@
-web: gunicorn roit.wsgi
+web: gunicorn project.wsgi
