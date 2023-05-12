@@ -30,7 +30,10 @@ Para executar localmente este app, siga as intruções abaixo:
 
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" /> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /> 
   
+## 🔗 Links
 
+- Repositório do workflow que atua como performer [aqui](https://github.com/osmfaria/RoitRPAPerformer)
+- Repositório do workflow que atua como dispatcher [aqui](https://github.com/osmfaria/RoitRPA)
 
 
 
